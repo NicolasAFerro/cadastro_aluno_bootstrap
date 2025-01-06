@@ -18,7 +18,13 @@
         <div class="display-6">Formulário de Cadastro</div>
         <div class="row">
           <div class="col">
-            <form class="mt-3">
+            <!--on submit é o evento click-->
+            <!-- o return false não atualiza a página no reset-->
+            <form
+              class="mt-3"
+              onsubmit="save(); return false"
+              id="studentsForm"
+            >
               <div class="row mb-3">
                 <label for="inputNome" class="col-sm-2 col-form-label"
                   >Nome</label

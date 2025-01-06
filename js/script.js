@@ -96,3 +96,32 @@ function addNewRow(student) {
         console.log(error);
     }
 }
+
+function save(){ 
+    try{   
+        const fetchRadioBtns = document.getElementsByName("gridRadios");
+        var shiftValue;
+        for (let radio_Option of fetchRadioBtns) {
+            if (radio_Option.checked) {
+                shiftValue = radio_Option.value;
+                break;
+            }
+        }
+        var student= {
+            id: students.length+1,
+            name:document.getElementById("inputNome").value,
+            email: document.getElementById("inputEmail").value,
+            phone: document.getElementById("inputPhone").value,
+            course: document.getElementById("selectCourses").value,            
+            shift: shiftValue
+        } 
+      
+
+        addNewRow(student); 
+        students.push(student); 
+        document.getElementById("studentsForm").reset();
+    }
+    catch(error){ 
+        console.log(`save error:${error}`);
+    }
+}
