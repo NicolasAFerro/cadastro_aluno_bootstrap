@@ -138,27 +138,36 @@
 
       <section class="mt-5">
         <div class="display-6">Alunos Cadastrados</div>
-        <table class="table" id="studentsTable">
+        <table
+          class="table w-md-auto"
+          id="studentsTable"
+          style="border: solid 1px red"
+        >
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Email</th>
-              <th scope="col">Telefone</th>
-              <th scope="col">Curso</th>
-              <th scope="col">Turno</th>
+              <th
+                scope="col"
+                class="text-center"
+                style="border: solid 1px purple"
+              >
+                #
+              </th>
+              <th scope="col" class="text-center">Nome</th>
+              <th scope="col" class="d-none d-md-table-cell text-center">
+                Email
+              </th>
+              <th scope="col" class="d-none d-lg-table-cell text-center">
+                Telefone
+              </th>
+              <th scope="col" class="d-none d-xl-table-cell text-center">
+                Curso
+              </th>
+              <th scope="col" class="d-none d-xl-table-cell text-center">
+                Turno
+              </th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>João</td>
-              <td>teste@teste.com</td>
-              <td>(15) 99999-9999</td>
-              <td>Java</td>
-              <td>Noturno</td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
     </main>

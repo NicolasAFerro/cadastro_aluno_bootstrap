@@ -70,27 +70,55 @@ function addNewRow(student) {
         var table = document.getElementById("studentsTable"); 
         var newRow = table.insertRow(); 
 
-        var idNode = document.createTextNode(student.id);  
-        var nameNode = document.createTextNode(student.name);
-        var emailNode = document.createTextNode(student.email);  
-        var phoneNode = document.createTextNode(student.phone); 
-        
-        
-        var courseName = classes[student.course - 1].class_name;
-        var shiftName = shifts[student.shift - 1].name;
-        
-        var courseNode = document.createTextNode(courseName);
-        var shiftNode = document.createTextNode(shiftName);
+        var idNode = document.createTextNode(student.id);            
+        var idCell= newRow.insertCell(); 
+        idCell.className='text-center';
+        idCell.appendChild(idNode); 
+        //newRow.insertCell().appendChild(idNode);
 
-        console.log(`Numero shift estudante: ${student.shift}`); 
-
+        var nameNode = document.createTextNode(student.name);  
+        var nameCell= newRow.insertCell(); 
+        nameCell.className='text-center';
+        nameCell.appendChild(nameNode);
         // Adicionar as células na tabela
-        newRow.insertCell().appendChild(idNode);  
-        newRow.insertCell().appendChild(nameNode);  
-        newRow.insertCell().appendChild(emailNode);  
-        newRow.insertCell().appendChild(phoneNode);  
-        newRow.insertCell().appendChild(courseNode);  
-        newRow.insertCell().appendChild(shiftNode);  
+       
+        //newRow.insertCell().appendChild(nameNode);  
+
+        var emailNode = document.createTextNode(student.email);   
+        var emailCell= newRow.insertCell(); 
+        emailCell.className='d-none d-md-table-cell text-center';
+        emailCell.appendChild(emailNode);  
+        //newRow.insertCell().appendChild(emailNode); 
+
+        var phoneNode = document.createTextNode(student.phone);    
+        var phoneCell= newRow.insertCell();  
+        phoneCell.className='d-none d-lg-table-cell text-center';
+        phoneCell.appendChild(phoneNode); 
+        //newRow.insertCell().appendChild(phoneNode); 
+
+
+        var courseName = classes[student.course - 1].class_name;   
+        var courseNode = document.createTextNode(courseName);  
+        var courseCell= newRow.insertCell();  
+        courseCell.className='d-none d-xl-table-cell text-center';
+        courseCell.appendChild(courseNode);  
+         //newRow.insertCell().appendChild(courseNode);
+        
+        
+        var shiftName = shifts[student.shift - 1].name;    
+        var shiftNode = document.createTextNode(shiftName);    
+        var shiftCell= newRow.insertCell();  
+        shiftCell.className='d-none d-xl-table-cell text-center ';
+        shiftCell.appendChild(shiftNode);           
+        //newRow.insertCell().appendChild(shiftNode);
+
+    
+
+       
+          
+         
+         
+        
 
     } catch (error) { 
         console.log(error);
